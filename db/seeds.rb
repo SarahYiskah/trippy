@@ -32,3 +32,21 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+# new itinerary
+Itinerary.create(name: 'nyc')
+
+#UserIntinerary
+brooke = UserItinerary.create(user_id: 1, itinerary_id: 1)
+
+#new activity
+starbucks = Activity.create(name: 'Starbucks', category: 'restaurant', longitude: 0.0, latitude: 0.0)
+
+#join
+sarah = ItineraryActivity.create(activity_id: 1, itinerary_id:1)
+        UserActivity.create(user_id: 1, activity_id: 1)
+
+#new review
+Review.create(content: 'hii', user_id: 1, activity_id: 1)
+
+User.first.itineraries

@@ -8,6 +8,12 @@ class User < ApplicationRecord
                                    dependent:   :destroy
   has_many :following, through: :active_relationships,  source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  has_many :user_itineraries
+  has_many :itineraries, through: :user_itineraries
+  has_many :user_activities
+  has_many :activities, through: :user_activities
+  has_many :reviews, through: :activities
+
   def feed
 
   end
